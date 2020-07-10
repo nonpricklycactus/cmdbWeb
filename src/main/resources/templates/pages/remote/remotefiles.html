@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远程文件分发</title>
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css" media="all">
+</head>
+<body>
+<div class="layui-col-md4">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <div class="ok-card-title">服务器列表</div>
+        </div>
+        <table class="layui-hide"lay-filter="server" id="server"></table>
+    </div>
+</div>
+<div class="layui-col-md8">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <div class="ok-card-title">文件分发</div>
+        </div>
+        <div class="layui-upload">
+            <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
+            <div class="layui-upload-list">
+                <table class="layui-table">
+                    <thead>
+                    <tr><th>文件名</th>
+                        <th>大小</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr></thead>
+                    <tbody id="demoList"></tbody>
+                </table>
+            </div>
+            <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+<script>
+    layui.use(['form','table','element','upload', 'layedit', 'laydate'], function(){
+        var table = layui.table;
+        var form = layui.form
+            ,upload = layui.upload
+            ,layer = layui.layer;
+        let $ = layui.jquery;
+        var serverID=[];
+
+        table.render({
+            elem: '#server'
+            ,url:'/pages/serverpage/serverdata'
+            ,cellMinWidth: 80
+            ,cols: [
+                [
+                    {type:'checkbox'}
+                    ,{field: 'server_id', title: '服务器编号', align: 'left', sort: true}
+                    ,{field: 'hostname', title: '主机名', align: 'center', sort: true}
+                    ,{field: 'device_type', title: '服务器型号', align: 'center'}
+                ]
+            ]
+            ,page: true
+        });
+
+        //监听表格复选框选择
+        table.on('checkbox(server)', function(obj){
+            if(obj.checked==false){
+                var index = serverID.indexOf(obj.data.server_id);
+                serverID.splice(index,1);
+            }
+            serverID.push(obj.data.server_id);
+        });
+
+        var files=[];
+        //上传
+        //多文件列表示例
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: 'uploadSource' //改成您自己的上传接口
+            ,accept: 'file'
+            ,exts: 'txt|rar|zip|doc|docx|pdf|xls|xlsx' //允许上传的文件类型
+            ,multiple: true
+            ,auto: false
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                this.data={"server_id":serverID.join(',')};
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1024).toFixed(1) +'kb</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if (res.code == 0){
+                    files.push({"fileName":res.filename,"fileUrl":res.fileUrl,"fileSize":res.fileSize});//,"fileUrl":res.fileUrl
+                    //files.push("server_id",serverID.join(','));
+                    var json = JSON.stringify(files);
+                    //将上传的文件信息加入到集合中并转换成json字符串
+                    $("#fileJson").attr("value",json);
+
+                    var fileUrl = res.fileUrl;
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    tds.eq(3).html('<span>'+fileUrl+'</span>');
+                    tds.eq(4).html(''); //清空操作
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

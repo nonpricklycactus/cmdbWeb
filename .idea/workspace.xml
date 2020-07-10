@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="69a1ac55-d21c-45c5-8196-28f773859244" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/Java/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="C:\Users\wxk64\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Xynrz5VOtDKHm6f5bYedFmjsJS" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="ToolWindowAnt.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/data" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.wxk.cmdb.service.impl" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wxk.cmdb.mapper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\templates\pages\serverpage" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\templates" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\static" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\pages" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wxk.cmdb.controller.PropertyController" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\templates\data" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\templates" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\static\images" />
+      <recent name="D:\programme\java\cmdbWeb\src\main\resources\templates\pages" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.WebApplication">
+    <configuration name="WebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_202\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.wxk.cmdb.WebApplication" />
+      <module name="base_project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="log" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wxk.cmdb.utils.log" />
+      <module name="base_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wxk.cmdb.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wxk.cmdb.utils.test" />
+      <module name="base_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wxk.cmdb.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="base_project" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wxk.cmdb.WebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 6.0" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 6.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/cmdbWeb/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$">
+          <settings>
+            <option name="CONTEXT_PATH" value="/cmdbWeb" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_cmdbWeb" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52405" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.WebApplication" />
+      <item itemvalue="Application.log" />
+      <item itemvalue="Spring Boot.WebApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 6.0" />
+      <item itemvalue="Application.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WebApplication" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.log" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="69a1ac55-d21c-45c5-8196-28f773859244" name="Default Changelist" comment="" />
+      <created>1582027404068</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582027404068</updated>
+      <workItem from="1583672428496" duration="1308000" />
+      <workItem from="1583673764334" duration="10000" />
+      <workItem from="1584094854808" duration="268000" />
+      <workItem from="1584095676738" duration="6348000" />
+      <workItem from="1584184313585" duration="2194000" />
+      <workItem from="1584267626681" duration="4350000" />
+      <workItem from="1584272074369" duration="703000" />
+      <workItem from="1584358262663" duration="6353000" />
+      <workItem from="1584444997643" duration="3929000" />
+      <workItem from="1584961307592" duration="3174000" />
+      <workItem from="1584964672265" duration="432000" />
+      <workItem from="1585306400335" duration="2790000" />
+      <workItem from="1585652894849" duration="40000" />
+      <workItem from="1585821570239" duration="3585000" />
+      <workItem from="1586259838217" duration="902000" />
+      <workItem from="1586687769529" duration="3938000" />
+      <workItem from="1586772796910" duration="7355000" />
+      <workItem from="1586861242429" duration="3989000" />
+      <workItem from="1586949096683" duration="2516000" />
+      <workItem from="1587034322203" duration="1192000" />
+      <workItem from="1587035519295" duration="70000" />
+      <workItem from="1587035594969" duration="1853000" />
+      <workItem from="1587289506306" duration="7006000" />
+      <workItem from="1588576485764" duration="2898000" />
+      <workItem from="1589095119723" duration="14705000" />
+      <workItem from="1589178729441" duration="16785000" />
+      <workItem from="1589259435403" duration="10228000" />
+      <workItem from="1589279675898" duration="3279000" />
+      <workItem from="1589352142484" duration="6768000" />
+      <workItem from="1589433145077" duration="8784000" />
+      <workItem from="1589451075090" duration="7029000" />
+      <workItem from="1589523045356" duration="7486000" />
+      <workItem from="1589530964697" duration="1520000" />
+      <workItem from="1589539146350" duration="1340000" />
+      <workItem from="1589591439775" duration="3363000" />
+      <workItem from="1589783608137" duration="4071000" />
+      <workItem from="1589799478799" duration="790000" />
+      <workItem from="1589800738751" duration="234000" />
+      <workItem from="1589801014208" duration="74000" />
+      <workItem from="1589801118984" duration="1032000" />
+      <workItem from="1590040762925" duration="62000" />
+      <workItem from="1590314348443" duration="5435000" />
+      <workItem from="1590489158842" duration="784000" />
+      <workItem from="1590835477130" duration="3483000" />
+      <workItem from="1591404617237" duration="4811000" />
+      <workItem from="1591413056223" duration="2484000" />
+      <workItem from="1591439565653" duration="1159000" />
+      <workItem from="1591440752867" duration="307000" />
+      <workItem from="1591489123545" duration="8757000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wxk/cmdb/controller/ServerController/AddServerController.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,121 @@
+[
+    {
+        "title": "控制台",
+        "href": "pages/console.html",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe654;",
+        "spread": true,
+        "isCheck": true
+    },
+    {
+        "title": "服务器",
+        "href": "",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe6b8;",
+        "children": [
+            {
+                "title": "服务器列表",
+                "href": "pages/serverpage/server.html",
+                "icon": "&#xe68e;"
+            },
+            {
+                "title": "新增服务器",
+                "href": "pages/serverpage/addserver.html",
+                "icon": "&#xe68e;"
+            },
+            {
+                "title": "服务器管理",
+                "href": "pages/serverpage/editserver.html",
+                "icon": "&#xe68e;"
+            }
+        ]
+    },
+    {
+        "title": "会员管理",
+        "href": "",
+        "icon": "&#xe66f;",
+        "spread": false,
+        "children": [
+            {
+                "title": "用户列表",
+                "href": "pages/member/user.html",
+                "fontFamily": "layui-icon",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "角色列表",
+                "href": "pages/member/role.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "资产监控",
+        "href": "",
+        "icon": "&#xe62c;",
+        "spread": false,
+        "children": [
+                    {
+                        "title": "CPU资产",
+                        "href": "pages/property/cpuproperty.html",
+                        "fontFamily": "layui-icon",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "硬盘资产",
+                        "href": "pages/property/diskproperty.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "内存资产",
+                        "href": "pages/property/memoryproperty.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "网卡资产",
+                        "href": "pages/property/networkproperty.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    }
+                ]
+    },
+    {
+        "title": "远程控制",
+        "href": "",
+        "icon": "&#xe705;",
+        "spread": false,
+        "children": [
+            {
+                "title": "远程命令",
+                "href": "pages/remote/command.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "远程上传",
+                "href": "pages/remote/remotefiles.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "日志管理",
+        "href": "",
+        "icon": "&#xe636;",
+        "spread": false,
+        "children": [
+            {
+                "title": "日志列表",
+                "href": "pages/system/log.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    }
+]

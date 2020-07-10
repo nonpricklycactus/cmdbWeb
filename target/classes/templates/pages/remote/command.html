@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远程命令</title>
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css" media="all">
+</head>
+<body>
+<div class="layui-col-md4">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <div class="ok-card-title">服务器列表</div>
+        </div>
+        <table class="layui-hide"lay-filter="server" id="server"></table>
+    </div>
+</div>
+<div class="layui-col-md7">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <div class="ok-card-title">命令执行</div>
+        </div>
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">命令输入：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" lay-verify="title" id="cmd" autocomplete="off" placeholder="请输入命令" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="layui-form-item layui-form-text" id="command">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+<script>
+    layui.use(['form','table', 'layedit', 'laydate'], function(){
+        var table = layui.table;
+        var form = layui.form
+            ,layer = layui.layer;
+        let $ = layui.jquery;
+        var serverID=[];
+
+        table.render({
+            elem: '#server'
+            ,url:'/pages/serverpage/serverdata'
+            ,cellMinWidth: 80
+            ,cols: [
+                [
+                {type:'checkbox'}
+                ,{field: 'server_id', title: '服务器编号', align: 'left', sort: true}
+                ,{field: 'hostname', title: '主机名', align: 'center', sort: true}
+                ,{field: 'device_type', title: '服务器型号', align: 'center'}
+                ]
+            ]
+            ,page: true
+        });
+
+        //监听表格复选框选择
+        table.on('checkbox(server)', function(obj){
+            if(obj.checked==false){
+                var index = serverID.indexOf(obj.data.server_id);
+                serverID.splice(index,1);
+            }
+            serverID.push(obj.data.server_id);
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            var command = $('#cmd').val();
+
+            $.ajax({
+                url: "command",
+                type: "POST",
+                data: {server_id:serverID.join(','),command:command},
+                dataType: "json",
+                success: function(data){
+                    if(data.code=='0'){
+                        for(var i=0;i<data.data.length;i++){
+                            var serverID = data.data[i].serverID;
+                            var result =data.data[i].result;
+
+                            var html='   <label class="layui-form-label" id="servercode">'+serverID+'</label>\n' +
+                                '            <div class="layui-input-block">\n' +
+                                '                <textarea placeholder="执行结果" class="layui-textarea" id="result">'+result+'</textarea>\n' +
+                                '            </div>';
+
+                            $('#command').append(html);
+                        }
+
+                        layer.msg("执行成功", {icon: 6});
+                    }else{
+                        layer.msg("执行失败", {icon: 5});
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+</body>
+</html>

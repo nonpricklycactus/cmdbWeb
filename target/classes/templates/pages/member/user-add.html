@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../css/oksub.css">
+</head>
+<body>
+    <div class="ok-body">
+        <!--form表单-->
+        <form class="layui-form ">
+            <div class="layui-form-item input-item">
+                <label for="username">用户名</label>
+                <input type="text" lay-verify="required" name="username" placeholder="请输入账号" autocomplete="off" id="username" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="password">密码</label>
+                <input type="password" lay-verify="required|password" name="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="comPassword">确认密码</label>
+                <input type="password" lay-verify="required|comPassword" name="password" placeholder="请确认密码" autocomplete="off" id="comPassword" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="realname">真实姓名</label>
+                <input type="text" name="text" placeholder="请输入真实姓名"  id="realname" maxlength="5" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label class="layui-form-label">所属部门</label>
+                <div class="layui-input-block">
+                    <select name="depart" id="depart" lay-filter="aihao">
+                        <!--/*@thymesVar id="departs" type="java.util.List"*/-->
+                        <!--/*@thymesVar id="depart" type="com.wxk.cmdb.domain.Department"*/-->
+                        <option th:each="depart : ${departs}" th:value="${depart.id}" th:text="${depart.depname}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="email">输入邮箱</label>
+                <input type="text" name="text" placeholder="请输入邮箱号"  id="email" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="phone">输入手机号</label>
+                <input type="text"  name="text" placeholder="请输入手机号"  id="phone" maxlength="11" class="layui-input">
+            </div>
+
+            <!--     <div class="layui-form-item input-item code-box">
+                     <label for="authCode">验证码</label>
+                     <input type="text" lay-verify="required" name="captcha" placeholder="请输入验证码" id="authCode" autocomplete="off" maxlength="8" class="layui-input">
+                     <button type="button" class="layui-btn btn-auth-code">获取验证码</button>
+                 </div>-->
+            <div class="layui-form-item">
+                <button class="layui-btn layui-block" lay-filter="login" lay-submit="">注册</button>
+            </div>
+        </form>
+    </div>
+    <!--js逻辑-->
+    <script src="../../lib/layui/layui.js"></script>
+    <script>
+        layui.use(["element", "form", "laydate", "okLayer", "okUtils"], function () {
+            let form = layui.form;
+            let laydate = layui.laydate;
+            let okLayer = layui.okLayer;
+            let okUtils = layui.okUtils;
+
+            laydate.render({elem: "#birthday", type: "datetime"});
+
+            form.verify({
+                birthdayVerify: [/^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))(\s(([01]\d{1})|(2[0123])):([0-5]\d):([0-5]\d))?$/, '日期格式不正确']
+            });
+
+            form.on("submit(login)", function (data) {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var realname = $('#realname').val();
+                var departId = $('#depart').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var params = {};
+                params.username = username;
+                params.password = password;
+                params.realname = realname;
+                params.departId = departId;
+                params.email = email;
+                params.phone = phone;
+                var loginLoadIndex = layer.load(2);
+                $.ajax({
+                    type:'post',
+                    url:window.location.protocol+'//'+window.location.host+'/register',
+                    dataType:'html',
+                    data:JSON.stringify(params),
+                    contentType:'application/json',
+                    success:function (data) {
+                        layer.close(loginLoadIndex);
+                        var jsonData = JSON.parse(data);
+                        if (jsonData.code == '0'){
+                            alert("添加成功");
+                            window.location.reload();
+                        }
+                        if (jsonData.code == '-1'){
+                            alert(jsonData.msg);
+                            window.location.reload();
+                        }
+                    },
+                    error:function () {
+                        window.location.reload();
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

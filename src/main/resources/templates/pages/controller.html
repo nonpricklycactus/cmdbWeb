@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>IT资产管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="../lib/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="../lib/echarts/echarts.theme.js"></script>
+    <script type="text/javascript" src="../lib/echarts/world/js/china.js"></script>
+    <link rel="stylesheet" href="../css/oksub.css" media="all"/>
+</head>
+<body class="ok-body-scroll console">
+<div class="ok-body home">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs6 layui-col-md3">
+            <div class="layui-card">
+                <div class="ok-card-body">
+                    <div class="img-box" ok-pc-in-show>
+                        <img src="../images/home-03.png" alt="none"/>
+                    </div>
+                    <div class="cart-r">
+                        <div class="stat-text servers-num">0</div>
+                        <div class="stat-heading">服务器数量</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-md3">
+            <div class="layui-card">
+                <div class="ok-card-body">
+                    <div class="img-box" ok-pc-in-show>
+                        <img src="../images/home-01.png" alt="none"/>
+                    </div>
+                    <div class="cart-r">
+                        <div class="stat-text blogs-num">0</div>
+                        <div class="stat-heading">日志数量</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-md3">
+            <div class="layui-card">
+                <div class="ok-card-body">
+                    <div class="img-box" ok-pc-in-show>
+                        <img src="../images/home-01.png" alt="none"/>
+                    </div>
+                    <div class="cart-r">
+                        <div class="stat-text oders-num">0</div>
+                        <div class="stat-heading">工单数量</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-md3">
+            <div class="layui-card">
+                <div class="ok-card-body">
+                    <div class="img-box" ok-pc-in-show>
+                        <img src="../images/home-04.png" alt="none"/>
+                    </div>
+                    <div class="cart-r">
+                        <div class="stat-text fans-num">0</div>
+                        <div class="stat-heading">用户</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <div class="ok-card-title">服务器列表</div>
+                </div>
+                <table class="layui-hide" id="demo" lay-filter="demo"></table>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header" style="overflow: auto;height:480px ">
+                    <div class="ok-card-title" >日志记录</div>
+                    <div th:each="log : ${logs}">
+                        <a th:text="${log}">Onions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../lib/layui/layui.js"></script>
+<script type="text/javascript" src="../js/controller.js"></script>

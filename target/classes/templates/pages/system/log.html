@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>日志列表</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="../../css/oksub.css">
+    </head>
+    <body>
+    <div th:each="log : ${logs}" >
+        <div th:text="${log}">Onions</div>
+        <br>
+    </div>
+    </body>
+</html>
